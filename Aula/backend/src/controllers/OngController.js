@@ -1,5 +1,4 @@
-
-const crypto = require('crypto');
+const genereteUniqueId = require('../utils/genereteUniqueId');
 const connection = require('../database/connection');
 
 // expota as funções de rotas
@@ -20,7 +19,7 @@ module.exports = {
 
     //para criar o id
     // usamos essa ideia da propria documentação do node utilizando o crypto
-    const id = crypto.randomBytes(4).toString('HEX');
+    const id = genereteUniqueId();
 
     // inicia conecxão de insert, inserir dados na tabela vindo da requisição
     // possui 'await' para que ao realizar a tarefa espere ela terminar
